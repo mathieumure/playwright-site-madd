@@ -1,0 +1,151 @@
+<script setup lang="ts">
+import Hero from "~/app/layout/Hero.vue";
+
+useHead({
+  title:
+    "Welcome to the official website of Microsoft's Advanced Defense Division (MADD).",
+});
+</script>
+
+<template>
+  <div>
+    <Hero />
+    <section class="browsers">
+      <img src="/images/chrome.png" alt="Chrome as a weapon" />
+      <img src="/images/firefox.png" alt="Firefox as a weapon" />
+      <img src="/images/edge.png" alt="Edge as a weapon" />
+      <img src="/images/safari.png" alt="Safari as a weapon" />
+    </section>
+    <section class="features">
+      <article>
+        <h3>Discover Innovation in the Service of Security</h3>
+        <p>
+          <b>Microsoft's Advanced Defense Division (MADD)</b> pushes the
+          boundaries of technology to ensure a secure future.
+        </p>
+        <p>
+          With a team of world-renowned researchers, engineers, and security
+          experts, MADD is committed to defending vital interests through
+          <b>technological innovation</b>.
+        </p>
+        <p>
+          Our mission is to create a <b>safer world</b> by harnessing the power
+          of artificial intelligence, secure computing, and cutting-edge
+          solutions.
+        </p>
+      </article>
+      <div class="space"></div>
+      <div class="space"></div>
+      <article>
+        <h3>Our Areas of Expertise</h3>
+        <p>
+          Advanced Cybersecurity: We strive to push the limits of cybersecurity
+          by developing cutting-edge solutions to detect, prevent, and
+          neutralize the most sophisticated digital threats.
+        </p>
+        <p>
+          Artificial Intelligence for Defense: Our AI expertise enables the
+          development of autonomous systems capable of rapidly analyzing data to
+          make informed decisions in complex and dynamic environments.
+        </p>
+        <p>
+          Covert Surveillance Technologies: We innovate in the field of covert
+          surveillance to ensure the security and protection of sensitive
+          operations.
+        </p>
+        <p>
+          Next-Generation Cryptography: Our team of cryptographers develops
+          advanced encryption methods to secure communications and confidential
+          data.
+        </p>
+      </article>
+      <article>
+        <h3>Commitment to Global Security</h3>
+        <p>
+          MADD collaborates closely with governments, security agencies, and
+          industrial partners worldwide to counter emerging threats. We take
+          pride in contributing to the creation of a future where technology is
+          an unwavering asset in preserving peace and security.
+        </p>
+      </article>
+      <div class="space"></div>
+      <div class="space"></div>
+      <article>
+        <h3>Careers Within MADD</h3>
+        <p>
+          Join us in our quest to push the boundaries of technological security.
+          We are looking for bright and determined minds to tackle the most
+          complex challenges of our time. Explore our job offers and discover
+          how you can be part of the team shaping the future.
+        </p>
+      </article>
+      <article>
+        <h3>Contact Us</h3>
+        <p>
+          For any inquiries, partnerships, or collaborations, feel free to
+          contact us at the following address: contact@ddam.microsoft.com
+        </p>
+        <p>
+          Follow us on social media to stay informed about the latest
+          advancements in security and technological innovation.
+        </p>
+        <p>
+          Join the Security Revolution with Microsoft's Advanced Defense
+          Division.
+        </p>
+      </article>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+.browsers {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+@media (min-width: 900px) {
+  .browsers {
+    padding: 3rem;
+  }
+}
+
+img {
+  max-width: 20%;
+}
+
+.features {
+  margin-top: 4rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.features h3 {
+  font-size: 1.3rem;
+}
+
+.features p {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-family: system-ui, sans-serif;
+  color: var(--foreground-secondary-color);
+}
+
+.space {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .space {
+    display: block;
+  }
+
+  .features {
+    padding: 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
