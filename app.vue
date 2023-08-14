@@ -19,19 +19,19 @@ import AppHeader from "./app/layout/AppHeader.vue";
   --grey-1: #efefef;
 }
 
-:root {
+:root[data-theme="dark"] {
   --background-color: var(--black-0);
   --background-secondary-color: var(--black-1);
   --foreground-color: var(--white-0);
   --foreground-secondary-color: var(--grey-1);
 }
 
-/*@media (prefers-color-scheme: light) {
-  :root {
-    --background-color: var(--white-0);
-    --foreground-color: var(--black-0);
-  }
-}*/
+:root {
+  --background-color: var(--white-0);
+  --background-secondary-color: var(--grey-1);
+  --foreground-color: var(--black-0);
+  --foreground-secondary-color: var(--black-1-1);
+}
 
 @font-face {
   src: url(/fonts/AeonikPro/medium.woff2);
