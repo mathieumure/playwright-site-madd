@@ -2,6 +2,7 @@
 import SearchIcon from "~/app/icons/SearchIcon.vue";
 import SunIcon from "~/app/icons/SunIcon.vue";
 import MoonIcon from "~/app/icons/MoonIcon.vue";
+import PrimaryButton from "~/app/layout/PrimaryButton.vue";
 
 const theme = ref<'dark'|'light'>('dark');
 
@@ -21,20 +22,30 @@ const toggleTheme = () => {
     <img src="/logo.png" alt="Logo of Microsoft's Advanced Defense Division" />
     <h1>Microsoft's Advanced Defense Division</h1>
     <button type="button" role="switch" :aria-checked="theme === 'dark'" aria-label="Dark theme" class="theme-button" @click="toggleTheme">
-      <SunIcon v-if="theme === 'light'" />
-      <MoonIcon v-else />
+      <SunIcon data-light />
+      <MoonIcon data-dark />
     </button>
-    <button type="button" aria-label="Search" class="search-button">
+    <PrimaryButton type="button" aria-label="Search" class="search-button">
       <SearchIcon class="search" />
       <span class="search-placeholder">Search</span>
-    </button>
+    </PrimaryButton>
   </header>
 </template>
+
+<style>
+html[data-theme="light"] .theme-button svg[data-light] {
+  display: block;
+}
+html[data-theme="dark"] .theme-button svg[data-dark] {
+  display: block;
+}
+</style>
 
 <style scoped>
 header {
   --background-color: var(--black-0);
   --foreground-color: var(--white-0);
+
   display: flex;
   max-width: 100%;
   align-items: center;
@@ -74,21 +85,14 @@ img {
   align-items: center;
 }
 
+.theme-button svg {
+  display: none;
+}
+
 .search-button {
-  display: flex;
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-  border-radius: 40px;
-  cursor: pointer;
+  padding: 14px !important;
   font-weight: 500;
   height: 40px;
-  justify-content: space-between;
-  -webkit-user-select: none;
-  user-select: none;
-  align-items: center;
-  padding: 14px;
-  gap: 7px;
-  border: none;
 }
 
 .search-placeholder {
@@ -101,9 +105,6 @@ img {
   }
   img {
     height: 128px;
-  }
-  .search-button {
-    border: solid 1px var(--foreground-color);
   }
   .search-placeholder {
     display: inline-block;
