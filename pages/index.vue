@@ -102,15 +102,10 @@ useHead({
 
 <style scoped>
 .browsers {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
   padding: 1rem;
-}
-
-@media (min-width: 900px) {
-  .browsers {
-    padding: 3rem;
-  }
 }
 
 img {
@@ -125,6 +120,13 @@ img {
   gap: 3rem;
 }
 
+.features > :nth-child(3) {
+  grid-row-start: 4;
+}
+.features > :nth-child(7) {
+  grid-row-start: 8;
+}
+
 .features h3 {
   font-size: 1.3rem;
 }
@@ -136,18 +138,19 @@ img {
   color: var(--foreground-secondary-color);
 }
 
-.space {
-  display: none;
-}
-
 @media (min-width: 900px) {
-  .space {
-    display: block;
+  .browsers {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem;
   }
 
   .features {
     padding: 3rem;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .features > :nth-child(3), .features > :nth-child(7) {
+    grid-row-start: auto;
   }
 }
 </style>
