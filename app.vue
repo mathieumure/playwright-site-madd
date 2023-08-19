@@ -77,4 +77,22 @@ body {
     Helvetica Neue,
     sans-serif;
 }
+
+main, header {
+  max-width: 1200px;
+  margin: auto
+}
+
+a {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient( 90deg, var(--blue-1), var(--blue-2) );
+  box-shadow: var(--background-color) 0px 6px 9px -5px;
+  transition: box-shadow 0.1s;
+}
+
+a:hover {
+  box-shadow: var(--blue-1) 0px 6px 9px -5px
+}
 </style>

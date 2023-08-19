@@ -19,16 +19,18 @@ const toggleTheme = () => {
 
 <template>
   <header>
-    <img src="/logo.png" alt="Logo of Microsoft's Advanced Defense Division" />
-    <h1>Microsoft's Advanced Defense Division</h1>
-    <button type="button" role="switch" :aria-checked="theme === 'dark'" aria-label="Dark theme" class="theme-button" @click="toggleTheme">
-      <SunIcon data-light />
-      <MoonIcon data-dark />
-    </button>
-    <PrimaryButton type="button" aria-label="Search" class="search-button">
-      <SearchIcon class="search" />
-      <span class="search-placeholder">Search</span>
-    </PrimaryButton>
+    <div class="wrapper">
+      <img src="/logo.png" alt="Logo of Microsoft's Advanced Defense Division" />
+      <h1>Microsoft's Advanced Defense Division</h1>
+      <button type="button" role="switch" :aria-checked="theme === 'dark'" aria-label="Dark theme" class="theme-button" @click="toggleTheme">
+        <SunIcon data-light />
+        <MoonIcon data-dark />
+      </button>
+      <PrimaryButton type="button" aria-label="Search" class="search-button">
+        <SearchIcon class="search" />
+        <span class="search-placeholder">Search</span>
+      </PrimaryButton>
+    </div>
   </header>
 </template>
 
@@ -46,14 +48,19 @@ header {
   --background-color: var(--black-0);
   --foreground-color: var(--white-0);
 
-  display: flex;
   max-width: 100%;
-  align-items: center;
-  gap: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   background-color: var(--background-color);
   color: var(--foreground-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 h1 {

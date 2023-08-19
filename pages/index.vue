@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Hero from "~/app/layout/Hero.vue";
+import ImageWithBlur from "~/app/images/ImageWithBlur.vue";
 
 useHead({
   title:
@@ -11,10 +12,10 @@ useHead({
   <div>
     <Hero />
     <section class="browsers">
-      <img src="/images/chrome.png" alt="Chrome as a weapon" />
-      <img src="/images/firefox.png" alt="Firefox as a weapon" />
-      <img src="/images/edge.png" alt="Edge as a weapon" />
-      <img src="/images/safari.png" alt="Safari as a weapon" />
+      <ImageWithBlur src="/images/chrome.png" alt="Chrome as a weapon" />
+      <ImageWithBlur src="/images/firefox.png" alt="Firefox as a weapon" />
+      <ImageWithBlur src="/images/edge.png" alt="Edge as a weapon" />
+      <ImageWithBlur src="/images/safari.png" alt="Safari as a weapon" />
     </section>
     <section class="features">
       <article>
@@ -34,8 +35,8 @@ useHead({
           solutions.
         </p>
       </article>
-      <div class="space"></div>
-      <div class="space"></div>
+      <ImageWithBlur src="/images/innovation_and_security.png" alt="Representation of innovation and security" />
+      <ImageWithBlur src="/images/expertise.png" alt="Our Areas of Expertise" />
       <article>
         <h3>Our Areas of Expertise</h3>
         <p>
@@ -68,8 +69,8 @@ useHead({
           an unwavering asset in preserving peace and security.
         </p>
       </article>
-      <div class="space"></div>
-      <div class="space"></div>
+      <ImageWithBlur src="/images/global_security.png" alt="Commitment to Global Security" />
+      <ImageWithBlur src="/images/careers.png" alt="Careers Within MADD" />
       <article>
         <h3>Careers Within MADD</h3>
         <p>
@@ -83,7 +84,7 @@ useHead({
         <h3>Contact Us</h3>
         <p>
           For any inquiries, partnerships, or collaborations, feel free to
-          contact us at the following address: contact@ddam.microsoft.com
+          contact us at the following address: <a href="mailto:contact@madd.microsoft.com">contact@madd.microsoft.com</a>
         </p>
         <p>
           Follow us on social media to stay informed about the latest
@@ -94,6 +95,7 @@ useHead({
           Division.
         </p>
       </article>
+      <ImageWithBlur src="/images/contact.png" alt="Contact us" />
     </section>
   </div>
 </template>
@@ -120,7 +122,7 @@ img {
   padding: 0 1rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .features h3 {
