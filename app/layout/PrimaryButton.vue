@@ -9,7 +9,7 @@
   to {
     rotate: 1turn;
   }
- }
+}
 
 .primary-button {
   --color-1: var(--blue-1);
@@ -38,25 +38,33 @@
   transition: box-shadow 0.3s;
 }
 
-.primary-button:focus-visible, .primary-button:hover {
+.primary-button:focus-visible,
+.primary-button:hover {
   box-shadow: var(--blue-1) 0px 0px 20px -4px;
 }
 
-.primary-button:hover:before, .primary-button:focus:before {
+.primary-button:hover:before,
+.primary-button:focus:before {
   background-color: transparent;
-  background-image: conic-gradient(from -45deg, transparent 90deg, var(--color-1), var(--color-2), transparent);
+  background-image: conic-gradient(
+    from -45deg,
+    transparent 90deg,
+    var(--color-1),
+    var(--color-2),
+    transparent
+  );
   animation: rotate 4s linear infinite;
 }
 
 .primary-button:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -2;
   inset: -300% -100%;
 }
 
 .primary-button:after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   left: var(--border-size);
@@ -66,5 +74,4 @@
   background: var(--background-color);
   border-radius: 9999px;
 }
-
 </style>

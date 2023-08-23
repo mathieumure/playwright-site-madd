@@ -1,6 +1,10 @@
 <script setup>
 import "normalize.css";
 import AppHeader from "./app/layout/AppHeader.vue";
+import { provideModal } from "~/app/modal/useModal";
+import AppModal from "~/app/modal/AppModal.vue";
+
+provideModal();
 </script>
 <template>
   <AppHeader />
@@ -8,15 +12,19 @@ import AppHeader from "./app/layout/AppHeader.vue";
     <NuxtPage />
   </main>
   <footer />
+  <AppModal />
 </template>
 
 <style>
 :root {
   --black-0: oklch(0% 0 255.09156059071347);
   --black-1: #2b3137;
+  --black-2: #15172a;
   --white-0: oklch(100% 0 255.09156059071347);
+  --white-1: #f9f9f9;
   --grey-0: #666666;
   --grey-1: #efefef;
+  --grey-2: oklch(0.68 0 0);
   --blue-1: oklch(59.59% 0.24 255.09156059071347);
   --blue-2: oklch(81.58% 0.189 190.74037768509325);
   --purple-1: oklch(49.07% 0.272 300.45);
@@ -30,6 +38,8 @@ import AppHeader from "./app/layout/AppHeader.vue";
   --background-secondary-color: var(--black-1);
   --foreground-color: var(--white-0);
   --foreground-secondary-color: var(--grey-1);
+  --modal-background-color: var(--black-2);
+  --modal-secondary-color: var(--grey-2);
 }
 
 :root {
@@ -37,6 +47,8 @@ import AppHeader from "./app/layout/AppHeader.vue";
   --background-secondary-color: var(--grey-1);
   --foreground-color: var(--black-0);
   --foreground-secondary-color: var(--black-1);
+  --modal-background-color: var(--white-1);
+  --modal-secondary-color: var(--grey-2);
 }
 
 @font-face {
@@ -78,21 +90,26 @@ body {
     sans-serif;
 }
 
-main, header {
+main,
+header {
   max-width: 1200px;
-  margin: auto
+  margin: auto;
 }
 
-a {
+body.modal-opened {
+  overflow: hidden;
+}
+
+a.link {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient( 90deg, var(--blue-1), var(--blue-2) );
+  background-image: linear-gradient(90deg, var(--blue-1), var(--blue-2));
   box-shadow: var(--background-color) 0px 6px 9px -5px;
   transition: box-shadow 0.1s;
 }
 
-a:hover {
-  box-shadow: var(--blue-1) 0px 6px 9px -5px
+a.link:hover {
+  box-shadow: var(--blue-1) 0px 6px 9px -5px;
 }
 </style>

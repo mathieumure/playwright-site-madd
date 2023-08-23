@@ -3,30 +3,49 @@ import SearchIcon from "~/app/icons/SearchIcon.vue";
 import SunIcon from "~/app/icons/SunIcon.vue";
 import MoonIcon from "~/app/icons/MoonIcon.vue";
 import PrimaryButton from "~/app/layout/PrimaryButton.vue";
+import { useModal } from "~/app/modal/useModal";
 
-const theme = ref<'dark'|'light'>('dark');
+const theme = ref<"dark" | "light">("dark");
 
 onMounted(() => {
-  theme.value = document.documentElement.getAttribute('data-theme') as 'dark'|'light';
-})
+  theme.value = document.documentElement.getAttribute("data-theme") as
+    | "dark"
+    | "light";
+});
 
 const toggleTheme = () => {
-  theme.value = theme.value === 'light' ? 'dark' : 'light';
-  document?.documentElement.setAttribute('data-theme', theme.value)
-}
+  theme.value = theme.value === "light" ? "dark" : "light";
+  document?.documentElement.setAttribute("data-theme", theme.value);
+};
 
+const { openModal } = useModal();
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <img src="/logo.png" alt="Logo of Microsoft's Advanced Defense Division" />
+      <img
+        src="/logo.png"
+        alt="Logo of Microsoft's Advanced Defense Division"
+      />
       <h1>Microsoft's Advanced Defense Division</h1>
-      <button type="button" role="switch" :aria-checked="theme === 'dark'" aria-label="Dark theme" class="theme-button" @click="toggleTheme">
+      <button
+        type="button"
+        role="switch"
+        :aria-checked="theme === 'dark'"
+        aria-label="Dark theme"
+        class="theme-button"
+        @click="toggleTheme"
+      >
         <SunIcon data-light />
         <MoonIcon data-dark />
       </button>
-      <PrimaryButton type="button" aria-label="Search" class="search-button">
+      <PrimaryButton
+        type="button"
+        aria-label="Search"
+        class="search-button"
+        @click="openModal"
+      >
         <SearchIcon class="search" />
         <span class="search-placeholder">Search</span>
       </PrimaryButton>

@@ -1,12 +1,11 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <svg viewBox="0 0 24 24">
     <defs>
       <linearGradient id="gradient-sun-icon" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"   stop-color="var(--red-1)"/>
-        <stop offset="100%" stop-color="var(--yellow-1)"/>
+        <stop offset="0%" stop-color="var(--red-1)" />
+        <stop offset="100%" stop-color="var(--yellow-1)" />
       </linearGradient>
     </defs>
     <path

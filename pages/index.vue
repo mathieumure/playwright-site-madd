@@ -35,7 +35,10 @@ useHead({
           solutions.
         </p>
       </article>
-      <ImageWithBlur src="/images/innovation_and_security.png" alt="Representation of innovation and security" />
+      <ImageWithBlur
+        src="/images/innovation_and_security.png"
+        alt="Representation of innovation and security"
+      />
       <ImageWithBlur src="/images/expertise.png" alt="Our Areas of Expertise" />
       <article>
         <h3>Our Areas of Expertise</h3>
@@ -69,7 +72,10 @@ useHead({
           an unwavering asset in preserving peace and security.
         </p>
       </article>
-      <ImageWithBlur src="/images/global_security.png" alt="Commitment to Global Security" />
+      <ImageWithBlur
+        src="/images/global_security.png"
+        alt="Commitment to Global Security"
+      />
       <ImageWithBlur src="/images/careers.png" alt="Careers Within MADD" />
       <article>
         <h3>Careers Within MADD</h3>
@@ -84,7 +90,10 @@ useHead({
         <h3>Contact Us</h3>
         <p>
           For any inquiries, partnerships, or collaborations, feel free to
-          contact us at the following address: <a href="mailto:contact@madd.microsoft.com">contact@madd.microsoft.com</a>
+          contact us at the following address:
+          <a class="link" href="mailto:contact@madd.microsoft.com"
+            >contact@madd.microsoft.com</a
+          >
         </p>
         <p>
           Follow us on social media to stay informed about the latest
@@ -149,7 +158,8 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
-  .features > :nth-child(3), .features > :nth-child(7) {
+  .features > :nth-child(3),
+  .features > :nth-child(7) {
     grid-row-start: auto;
   }
 }
