@@ -18,7 +18,7 @@ defineProps<{ href: string }>();
   height: 56px;
   background: var(--background-color);
   border-radius: 4px;
-  box-shadow: 0 1px 3px 0 oklch(0.78 0 0);
+  box-shadow: 0 1px 3px 0 var(--modal-result-shadow-color);
   color: var(--foreground-color);
   display: block;
 }

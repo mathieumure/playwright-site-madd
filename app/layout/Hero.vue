@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroTitlePart from "~/app/layout/HeroTitlePart.vue";
 import PrimaryButton from "~/app/layout/PrimaryButton.vue";
+import { NuxtLink } from "#components";
 </script>
 
 <template>
@@ -27,7 +28,9 @@ import PrimaryButton from "~/app/layout/PrimaryButton.vue";
       technology to ensure a secure future.
     </p>
     <div class="actions-container">
-      <PrimaryButton>Get Started</PrimaryButton>
+      <PrimaryButton :is="NuxtLink" to="/getting-started"
+        >Getting Started with Playwright</PrimaryButton
+      >
     </div>
   </section>
 </template>

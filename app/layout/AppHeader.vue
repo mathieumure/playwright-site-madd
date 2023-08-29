@@ -24,10 +24,12 @@ const { openModal } = useModal();
 <template>
   <header>
     <div class="wrapper">
-      <img
-        src="/logo.png"
-        alt="Logo of Microsoft's Advanced Defense Division"
-      />
+      <NuxtLink to="/">
+        <img
+          src="/logo.png"
+          alt="Logo of Microsoft's Advanced Defense Division"
+        />
+      </NuxtLink>
       <h1>Microsoft's Advanced Defense Division</h1>
       <button
         type="button"

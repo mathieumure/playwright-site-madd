@@ -1,7 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+withDefaults(
+  defineProps<{
+    is?: string | object;
+  }>(),
+  {
+    is: "button",
+  },
+);
+</script>
 
 <template>
-  <button class="primary-button" type="button"><slot /></button>
+  <component :is="is" class="primary-button" type="button"><slot /></component>
 </template>
 
 <style scoped>
@@ -15,6 +24,7 @@
   --color-1: var(--blue-1);
   --color-2: var(--blue-2);
   --border-size: 2px;
+  text-decoration: none;
   position: relative;
   z-index: 0;
   overflow: hidden;

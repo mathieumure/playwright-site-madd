@@ -25,8 +25,11 @@ provideModal();
   --grey-0: #666666;
   --grey-1: #efefef;
   --grey-2: oklch(0.68 0 0);
+  --grey-3: oklch(0.78 0 0);
+  --grey-4: oklch(0.47 0 0);
   --blue-1: oklch(59.59% 0.24 255.09156059071347);
   --blue-2: oklch(81.58% 0.189 190.74037768509325);
+  --blue-3: oklch(0.3 0.04 278.18);
   --purple-1: oklch(49.07% 0.272 300.45);
   --purple-2: oklch(64.53% 0.292 2.47);
   --red-1: oklch(67.3% 0.266 25.039656026515278);
@@ -39,7 +42,10 @@ provideModal();
   --foreground-color: var(--white-0);
   --foreground-secondary-color: var(--grey-1);
   --modal-background-color: var(--black-2);
-  --modal-secondary-color: var(--grey-2);
+  --modal-secondary-color: var(--blue-3);
+  --modal-foreground-color: var(--white-0);
+  --modal-result-shadow-color: var(--grey-4);
+  --content-code-background-color: var(--black-2)
 }
 
 :root {
@@ -49,6 +55,9 @@ provideModal();
   --foreground-secondary-color: var(--black-1);
   --modal-background-color: var(--white-1);
   --modal-secondary-color: var(--grey-2);
+  --modal-foreground-color: var(--blue-1);
+  --modal-result-shadow-color: var(--grey-3);
+  --content-code-background-color: var(--white-1)
 }
 
 @font-face {
@@ -106,10 +115,6 @@ a.link {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, var(--blue-1), var(--blue-2));
   box-shadow: var(--background-color) 0px 6px 9px -5px;
-  transition: box-shadow 0.1s;
 }
 
-a.link:hover {
-  box-shadow: var(--blue-1) 0px 6px 9px -5px;
-}
 </style>

@@ -10,7 +10,9 @@ type Page = { url: string; title: string };
 const results = ref<Array<Page>>([]);
 const currentSearch = ref<string>();
 const debouncedSearch = debounce((search: string) => {
-  $fetch<Page[]>(`/api/search?q=${search}`).then(response => {results.value = response});
+  $fetch<Page[]>(`/api/search?q=${search}`).then((response) => {
+    results.value = response;
+  });
 }, 300);
 
 watch(currentSearch, () => {
@@ -51,7 +53,10 @@ watch(currentSearch, () => {
             }}</AppModalResult>
           </li>
         </ul>
-        <p class="text" v-else>Aucun résultat <span v-if="currentSearch">pour {{currentSearch}}</span></p>
+        <p class="text" v-else>
+          Aucun résultat
+          <span v-if="currentSearch">pour {{ currentSearch }}</span>
+        </p>
       </div>
     </div>
   </div>
@@ -69,10 +74,8 @@ watch(currentSearch, () => {
 
 .search-container {
   background: var(--modal-background-color);
-  border-radius: 6px;
-  box-shadow:
-    inset 1px 1px 0 0 var(--foreground-color),
-    0 3px 8px 0 var(--foreground-secondary-color);
+  border-radius: 10px;
+  box-shadow: var(--black-1) 1px 1px 7px;
   flex-direction: column;
   margin: 60px auto auto;
   position: relative;
@@ -141,8 +144,11 @@ form:after {
 
 .search-dropdown {
   padding: 0 1rem 1rem 1rem;
-  color: var(--blue-1);
   margin-top: 0;
+}
+
+.search-title {
+  color: var(--modal-foreground-color);
 }
 
 .search-results {
@@ -160,7 +166,7 @@ form:after {
 
 @media (min-width: 900px) {
   .search-container {
-    max-width: 65vw;
+    max-width: 900px;
   }
 }
 </style>
