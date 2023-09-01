@@ -6,7 +6,7 @@ defineProps<{ href: string }>();
 
 <template>
   <div class="search-results-item">
-    <a href="/docs/other-locators">
+    <a :href="href">
       <SharpIcon class="search-results-item__icon" />
       <span class="search-results-item__text"><slot /></span>
     </a>
@@ -39,11 +39,13 @@ defineProps<{ href: string }>();
   color: var(--modal-secondary-color);
 }
 
-.search-results-item:hover {
+.search-results-item:hover,
+.search-results-item.active {
   color: var(--white-0);
   background: linear-gradient(to right, var(--blue-1), var(--blue-2));
 }
-.search-results-item:hover .search-results-item__icon {
+.search-results-item:hover .search-results-item__icon,
+.search-results-item.active .search-results-item__icon {
   color: var(--white-0);
 }
 </style>

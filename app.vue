@@ -45,7 +45,7 @@ provideModal();
   --modal-secondary-color: var(--blue-3);
   --modal-foreground-color: var(--white-0);
   --modal-result-shadow-color: var(--grey-4);
-  --content-code-background-color: var(--black-2)
+  --content-code-background-color: var(--black-2);
 }
 
 :root {
@@ -57,7 +57,7 @@ provideModal();
   --modal-secondary-color: var(--grey-2);
   --modal-foreground-color: var(--blue-1);
   --modal-result-shadow-color: var(--grey-3);
-  --content-code-background-color: var(--white-1)
+  --content-code-background-color: var(--white-1);
 }
 
 @font-face {
@@ -78,6 +78,13 @@ provideModal();
   src: url(/fonts/InterV/regular.woff2);
   font-display: swap;
   font-family: Inter V;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(/fonts/GameCube.ttf);
+  font-display: swap;
+  font-family: GameCube;
   font-weight: 400;
 }
 
@@ -116,5 +123,4 @@ a.link {
   background-image: linear-gradient(90deg, var(--blue-1), var(--blue-2));
   box-shadow: var(--background-color) 0px 6px 9px -5px;
 }
-
 </style>

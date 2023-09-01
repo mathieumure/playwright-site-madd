@@ -6,16 +6,16 @@
 
 <style>
 @font-face {
-  font-family: 'Source Sans 3';
+  font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(/fonts/SourceSans3.woff2) format('woff2');
+  src: url(/fonts/SourceSans3.woff2) format("woff2");
 }
 
 .nuxt-content {
   padding: 3rem;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 20px;
 }
 
@@ -53,6 +53,6 @@
   background-color: var(--content-code-background-color);
   padding: 1rem;
   border-right: 4px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 </style>

@@ -3,13 +3,16 @@ import { useModal } from "~/app/modal/useModal";
 import SearchIcon from "~/app/icons/SearchIcon.vue";
 import AppModalResult from "~/app/modal/AppModalResult.vue";
 import { debounce } from "~/app/utils/debounce";
+import { Agent } from "~/app/agents/types";
 
 const { isModalOpen, closeModal } = useModal();
 
-type Page = { url: string; title: string };
-const results = ref<Array<Page>>([]);
+const searchInput = ref<HTMLInputElement | null>(null);
+
+const results = ref<Array<Agent>>([]);
 const currentSearch = ref<string>();
 const debouncedSearch = debounce((search: string) => {
+  currentActif.value = -1;
   $fetch<Page[]>(`/api/search?q=${search}`).then((response) => {
     results.value = response;
   });
@@ -18,6 +21,32 @@ const debouncedSearch = debounce((search: string) => {
 watch(currentSearch, () => {
   debouncedSearch(currentSearch.value);
 });
+
+onUpdated(() => {
+  if (searchInput.value) {
+    searchInput.value.focus();
+  }
+});
+
+const currentActif = ref<number>(-1);
+const incrementActif = () => {
+  currentActif.value++;
+  if (currentActif.value >= results.value.length) {
+    currentActif.value = 0;
+  }
+};
+const decrementActif = () => {
+  currentActif.value--;
+  if (currentActif.value < 0) {
+    currentActif.value = results.value.length - 1;
+  }
+};
+
+const selectActif = () => {
+  const current = results.value[currentActif.value];
+  navigateTo(`/agents/${current.id}`);
+  closeModal();
+};
 </script>
 
 <template>
@@ -29,6 +58,9 @@ watch(currentSearch, () => {
     class="overlay"
     v-if="isModalOpen"
     @click="closeModal"
+    @keydown.down="incrementActif"
+    @keydown.up="decrementActif"
+    @keydown.enter="selectActif"
   >
     <div class="search-container" @click.stop>
       <header>
@@ -36,6 +68,7 @@ watch(currentSearch, () => {
           <label class="search-label">
             <SearchIcon />
             <input
+              ref="searchInput"
               type="text"
               class="search-input"
               placeholder="Search agents"
@@ -47,10 +80,12 @@ watch(currentSearch, () => {
       <div class="search-dropdown">
         <h4 class="search-title">Agents</h4>
         <ul class="search-results" v-if="results.length">
-          <li v-for="result in results">
-            <AppModalResult :href="result.url">{{
-              result.title
-            }}</AppModalResult>
+          <li v-for="(result, index) in results">
+            <AppModalResult
+              :href="`/agents/${result.id}`"
+              :class="{ active: index === currentActif }"
+              >{{ result.codeName }}</AppModalResult
+            >
           </li>
         </ul>
         <p class="text" v-else>

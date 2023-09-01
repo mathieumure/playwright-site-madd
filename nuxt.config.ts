@@ -4,13 +4,11 @@ export default defineNuxtConfig({
     "micromark/lib/preprocess.js": "micromark",
     "micromark/lib/postprocess.js": "micromark",
   },
-  modules: [
-    '@nuxt/content'
-  ],
+  modules: ["@nuxt/content"],
   content: {
     markdown: {
       anchorLinks: false,
-    }
+    },
   },
   devtools: { enabled: true },
 });

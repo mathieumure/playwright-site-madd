@@ -1,18 +1,14 @@
 import Fuse from "fuse.js";
-
-type SearchResults = { url: string; title: string };
+import { database } from "~/server/agents.database";
+import { Agent } from "~/app/agents/types";
 
 const fuseOptions: Fuse.IFuseOptions<SearchResults> = {
-  keys: ["title"],
+  keys: ["codeName"],
 };
-const database: SearchResults[] = [
-  { url: "/agents/1234", title: "Agent Mario" },
-  { url: "/agents/1234", title: "Agent Wario" },
-];
 
 const searchEngine = new Fuse(database, fuseOptions);
 
-const apiHandler = defineEventHandler<Array<SearchResults>>((event) => {
+const apiHandler = defineEventHandler<Array<Agent>>((event) => {
   const query = getQuery(event);
   if (!query.q) {
     return [];

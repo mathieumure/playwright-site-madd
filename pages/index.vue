@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Hero from "~/app/layout/Hero.vue";
 import ImageWithBlur from "~/app/images/ImageWithBlur.vue";
+import ImageSquare from "~/app/images/ImageSquare.vue";
 
 useHead({
   title:
@@ -33,11 +34,11 @@ useHead({
         artificial intelligence, secure computing, and cutting-edge solutions.
       </p>
     </article>
-    <ImageWithBlur
+    <ImageSquare
       src="/images/innovation_and_security.png"
       alt="Representation of innovation and security"
     />
-    <ImageWithBlur src="/images/expertise.png" alt="Our Areas of Expertise" />
+    <ImageSquare src="/images/expertise.png" alt="Our Areas of Expertise" />
     <article>
       <h3>Our Areas of Expertise</h3>
       <p>
@@ -70,11 +71,11 @@ useHead({
         unwavering asset in preserving peace and security.
       </p>
     </article>
-    <ImageWithBlur
+    <ImageSquare
       src="/images/global_security.png"
       alt="Commitment to Global Security"
     />
-    <ImageWithBlur src="/images/careers.png" alt="Careers Within MADD" />
+    <ImageSquare src="/images/careers.png" alt="Careers Within MADD" />
     <article>
       <h3>Careers Within MADD</h3>
       <p>
@@ -101,7 +102,7 @@ useHead({
         Join the Security Revolution with Microsoft's Advanced Defense Division.
       </p>
     </article>
-    <ImageWithBlur src="/images/contact.png" alt="Contact us" />
+    <ImageSquare src="/images/contact.png" alt="Contact us" />
   </section>
 </template>
 
