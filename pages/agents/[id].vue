@@ -8,10 +8,11 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
 
 <template>
   <div class="container" v-if="data">
-    <div class="bento" data-columns="6" style="grid-row-end: span 2">
+    <div class="bento agent-info" data-columns="6" style="grid-row-end: span 2">
       <h1 class="title">{{ data.codeName }}</h1>
       <div class="flipping-container">
         <div class="flipping-element">
+          <img class="flip-icon" src="/images/flip.png" alt="">
           <ImageSquare
             class="agent-picture"
             :src="`/images/agents/${data.id}.png`"
@@ -72,9 +73,14 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   color: var(--white-0);
 }
 
+.bento.agent-info {
+  display: flex;
+  flex-direction: column;
+}
+
 .bento .agent-picture {
   padding: 0;
-  border-radius: 0;
+  border-radius: 0 0 18px 18px;
   box-shadow: none;
 }
 
@@ -83,6 +89,14 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+.flip-icon {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  height: 2.5rem;
 }
 
 @media (min-width: 900px) {
@@ -152,17 +166,20 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   margin: auto;
   position: relative;
   perspective: 1000px;
+  flex-grow: 1;
 }
 
 .flipping-element {
   transition: 600ms;
   transform-style: preserve-3d;
   display: flex;
+  height: 100%;
 }
 
 .agent-picture {
   backface-visibility: hidden;
   border-radius: 0 0 18px 18px;
+  object-fit: cover;
 }
 
 .flipping-container:hover .flipping-element {
