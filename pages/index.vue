@@ -12,10 +12,10 @@ useHead({
 <template>
   <Hero />
   <section class="browsers">
-    <ImageWithBlur src="/images/chrome.png" alt="Chrome as a weapon" />
-    <ImageWithBlur src="/images/firefox.png" alt="Firefox as a weapon" />
-    <ImageWithBlur src="/images/edge.png" alt="Edge as a weapon" />
-    <ImageWithBlur src="/images/safari.png" alt="Safari as a weapon" />
+    <ImageWithBlur src="/images/chrome.webp" alt="Chrome as a weapon" />
+    <ImageWithBlur src="/images/firefox.webp" alt="Firefox as a weapon" />
+    <ImageWithBlur src="/images/edge.webp" alt="Edge as a weapon" />
+    <ImageWithBlur src="/images/safari.webp" alt="Safari as a weapon" />
   </section>
   <section class="features">
     <article>
@@ -35,10 +35,10 @@ useHead({
       </p>
     </article>
     <ImageSquare
-      src="/images/innovation_and_security.png"
+      src="/images/innovation_and_security.webp"
       alt="Representation of innovation and security"
     />
-    <ImageSquare src="/images/expertise.png" alt="Our Areas of Expertise" />
+    <ImageSquare src="/images/expertise.webp" alt="Our Areas of Expertise" />
     <article>
       <h3>Our Areas of Expertise</h3>
       <p>
@@ -72,10 +72,10 @@ useHead({
       </p>
     </article>
     <ImageSquare
-      src="/images/global_security.png"
+      src="/images/global_security.webp"
       alt="Commitment to Global Security"
     />
-    <ImageSquare src="/images/careers.png" alt="Careers Within MADD" />
+    <ImageSquare src="/images/careers.webp" alt="Careers Within MADD" />
     <article>
       <h3>Careers Within MADD</h3>
       <p>
@@ -102,7 +102,7 @@ useHead({
         Join the Security Revolution with Microsoft's Advanced Defense Division.
       </p>
     </article>
-    <ImageSquare src="/images/contact.png" alt="Contact us" />
+    <ImageSquare src="/images/contact.webp" alt="Contact us" />
   </section>
 </template>
 

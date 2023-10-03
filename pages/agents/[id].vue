@@ -12,10 +12,10 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
       <h1 class="title">{{ data.codeName }}</h1>
       <div class="flipping-container">
         <div class="flipping-element">
-          <img class="flip-icon" src="/images/flip.png" alt="">
+          <img class="flip-icon" src="/images/flip.webp" alt="">
           <ImageSquare
             class="agent-picture"
-            :src="`/images/agents/${data.id}.png`"
+            :src="`/images/agents/${data.id}.webp`"
             alt=""
           />
           <dl class="informations">

@@ -26,7 +26,7 @@ const { openModal } = useModal();
     <div class="wrapper">
       <NuxtLink to="/">
         <img
-          src="/logo.png"
+          src="/logo.webp"
           alt="Logo of Microsoft's Advanced Defense Division"
         />
       </NuxtLink>
