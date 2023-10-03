@@ -2,7 +2,7 @@ import Fuse from "fuse.js";
 import { database } from "~/server/agents.database";
 import { Agent } from "~/app/agents/types";
 
-const fuseOptions: Fuse.IFuseOptions<SearchResults> = {
+const fuseOptions = {
   keys: ["codeName"],
 };
 

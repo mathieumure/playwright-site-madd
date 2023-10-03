@@ -114,10 +114,6 @@ useHead({
   padding: 1rem;
 }
 
-img {
-  max-width: 20%;
-}
-
 .features {
   margin-top: 4rem;
   padding: 0 1rem;

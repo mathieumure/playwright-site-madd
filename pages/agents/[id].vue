@@ -37,10 +37,12 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
       </ul>
     </div>
     <div class="bento" data-columns="3">
-      <p class="mission">Mission: {{ data.mission }}</p>
+      <h2 class="title">Current mission</h2>
+      <p class="mission">{{ data.mission }}</p>
     </div>
     <div class="bento" data-columns="3">
-      <p class="status">Status: {{ data.status }}</p>
+      <h2 class="title-2">Current status</h2>
+      <p class="status">{{ data.status }}</p>
     </div>
     <div class="bento" data-columns="8">
       <h2 class="title">Missions History</h2>
@@ -59,8 +61,12 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
 
 <style scoped>
 .bento {
+  font-family: Ubuntu, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 20px;
+
   border-radius: 18px;
-  box-shadow: 4px 3px 7px -1px var(--black-0);
+  box-shadow: 4px 3px 7px -1px var(--grey-4);
   overflow: hidden;
   background-image: linear-gradient(90deg, var(--purple-1), var(--blue-1));
   color: var(--white-0);
@@ -97,9 +103,23 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   }
 }
 
-.title {
+.bento ul {
+  list-style: circle;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 0 1rem 1rem 3rem;
+}
+
+.bento li {
+  margin-bottom: 1rem;
+}
+
+.title,
+.title-2 {
+  font-family: GameCube, sans-serif;
   text-transform: uppercase;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .informations {
@@ -107,8 +127,8 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   text-transform: uppercase;
   position: absolute;
   inset: 0;
-  background-color: var(--foreground-color);
-  color: var(--background-color);
+  background-color: var(--black-0);
+  color: var(--white-0);
   margin: 0;
   backface-visibility: hidden;
   transform: rotate3d(0, 1, 0, 180deg);
@@ -118,6 +138,7 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   font-size: 0.8rem;
   gap: 1rem;
   justify-content: center;
+  border-radius: 0 0 18px 18px;
 }
 
 .informations dd {
@@ -130,6 +151,7 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
 .flipping-container {
   margin: auto;
   position: relative;
+  perspective: 1000px;
 }
 
 .flipping-element {
@@ -140,9 +162,14 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
 
 .agent-picture {
   backface-visibility: hidden;
+  border-radius: 0 0 18px 18px;
 }
 
 .flipping-container:hover .flipping-element {
   transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.status, .mission {
+  padding: 1rem;
 }
 </style>

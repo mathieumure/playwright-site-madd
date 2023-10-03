@@ -122,4 +122,35 @@ const pikachu = {
   ],
 };
 
-export const database: Array<Agent> = [mario, wario, link, pikachu];
+const donkeyKong = {
+  id: 64,
+  birthdate: "9 juillet, 1981",
+  name: "Donkey Kong",
+  codeName: "Kong",
+  placeOfBirth: "Jungle de Donkey Kong",
+  appearance: {
+    Taille: "198 cm",
+    Poids: "300 kg",
+    Yeux: "Marron",
+    Pelage: "Brun",
+  },
+  abilities: [
+    "Force physique exceptionnelle",
+    "Agilité et capacité à grimper rapidement",
+    "Leadership naturel",
+  ],
+  mission:
+    "Protection de la jungle de Donkey Kong contre les intrus et les braconniers",
+  missionsHistory: [
+    "Sauvetage de la Princesse Peach lors d'une mission de secours audacieuse",
+    "Affrontement avec de nombreux adversaires redoutables pour défendre sa jungle",
+  ],
+  status:
+    "Agent de terrain de la CIA, spécialisé dans la défense de l'environnement naturel",
+  note: [
+    "Donkey Kong est un protecteur dévoué de sa jungle et de ses amis, notamment Diddy Kong et Dixie Kong.",
+    "Sa force brute et son courage inébranlable en font un atout précieux pour la CIA dans la préservation de la nature.",
+  ],
+};
+
+export const database: Array<Agent> = [mario, wario, link, pikachu, donkeyKong];

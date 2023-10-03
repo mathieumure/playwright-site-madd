@@ -88,6 +88,13 @@ provideModal();
   font-weight: 400;
 }
 
+@font-face {
+  src: url(/fonts/ubuntu.woff2);
+  font-display: swap;
+  font-family: Ubuntu;
+  font-weight: 400;
+}
+
 body {
   background-color: var(--background-color);
   color: var(--foreground-color);
