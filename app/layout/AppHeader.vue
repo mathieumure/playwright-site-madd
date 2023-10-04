@@ -7,11 +7,23 @@ import { useModal } from "~/app/modal/useModal";
 
 const theme = ref<"dark" | "light">("dark");
 
+const handleDarkModeChange = (event: MediaQueryListEvent) => {
+    theme.value = event.matches ? 'dark' : 'light';
+  document?.documentElement.setAttribute("data-theme", theme.value);
+}
+
 onMounted(() => {
   theme.value = document.documentElement.getAttribute("data-theme") as
     | "dark"
     | "light";
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", handleDarkModeChange)
+
 });
+
+onUnmounted(() => {
+  window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", handleDarkModeChange)
+})
 
 const toggleTheme = () => {
   theme.value = theme.value === "light" ? "dark" : "light";
