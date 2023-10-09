@@ -23,21 +23,24 @@
   line-height: 32px;
 }
 
-.nuxt-content h1 {
+.nuxt-content h2 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, var(--red-1), var(--yellow-1));
   box-shadow: var(--background-color) 0px 6px 9px -5px;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
-.nuxt-content h2 {
+.nuxt-content h3 {
   text-decoration: none;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, var(--purple-1), var(--purple-2));
   box-shadow: var(--background-color) 0px 6px 9px -5px;
+  font-size: 1.5em;
 }
 
 .nuxt-content a {
