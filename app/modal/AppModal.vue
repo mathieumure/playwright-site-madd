@@ -15,6 +15,9 @@ const debouncedSearch = debounce((search: string) => {
   currentActif.value = -1;
   $fetch<Page[]>(`/api/search?q=${search}`).then((response) => {
     results.value = response;
+    if (results.value.length > 0) {
+      currentActif.value = 0;
+    }
   });
 }, 300);
 
