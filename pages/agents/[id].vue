@@ -12,7 +12,7 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
       <h1 class="title">{{ data.codeName }}</h1>
       <div class="flipping-container">
         <div class="flipping-element">
-          <img class="flip-icon" src="/images/flip.webp" alt="">
+          <img class="flip-icon" src="/images/flip.webp" alt="" />
           <ImageSquare
             class="agent-picture"
             :src="`/images/agents/${data.id}.webp`"
@@ -186,7 +186,8 @@ const { data } = await useFetch<Agent>(() => `/api/agents/${route.params.id}`);
   transform: rotate3d(0, 1, 0, 180deg);
 }
 
-.status, .mission {
+.status,
+.mission {
   padding: 1rem;
 }
 </style>

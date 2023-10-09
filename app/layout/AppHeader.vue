@@ -8,22 +8,25 @@ import { useModal } from "~/app/modal/useModal";
 const theme = ref<"dark" | "light">("dark");
 
 const handleDarkModeChange = (event: MediaQueryListEvent) => {
-    theme.value = event.matches ? 'dark' : 'light';
+  theme.value = event.matches ? "dark" : "light";
   document?.documentElement.setAttribute("data-theme", theme.value);
-}
+};
 
 onMounted(() => {
   theme.value = document.documentElement.getAttribute("data-theme") as
     | "dark"
     | "light";
 
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", handleDarkModeChange)
-
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", handleDarkModeChange);
 });
 
 onUnmounted(() => {
-  window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", handleDarkModeChange)
-})
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .removeEventListener("change", handleDarkModeChange);
+});
 
 const toggleTheme = () => {
   theme.value = theme.value === "light" ? "dark" : "light";
@@ -42,7 +45,7 @@ const { openModal } = useModal();
           alt="Logo of Microsoft's Advanced Defense Division"
         />
       </NuxtLink>
-      <h1>Microsoft's Advanced Defense Division</h1>
+      <p class="app-title">Microsoft's Advanced Defense Division</p>
       <button
         type="button"
         role="switch"
@@ -96,13 +99,14 @@ header {
   gap: 1rem;
 }
 
-h1 {
+.app-title {
   flex: 1;
   margin: 0;
   font-size: 1.4rem;
   text-align: center;
   text-transform: uppercase;
   font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 img {
@@ -140,7 +144,7 @@ img {
 }
 
 @media (min-width: 900px) {
-  h1 {
+  .app-title {
     font-size: 2rem;
   }
   img {

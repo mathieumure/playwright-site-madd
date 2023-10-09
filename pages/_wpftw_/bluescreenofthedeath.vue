@@ -1,21 +1,26 @@
 <script lang="ts" setup="">
-import {NuxtLink} from "#components";
+import { NuxtLink } from "#components";
 import PrimaryButton from "~/app/layout/PrimaryButton.vue";
 import SearchIcon from "~/app/icons/SearchIcon.vue";
 
 const route = useRoute();
-const {data} = await useFetch(() => `/api/auth?token=${route.query.token}`);
+const { data } = await useFetch(() => `/api/auth?token=${route.query.token}`);
 </script>
 
 <template>
   <section v-if="data?.hasValidToken">
     <h1>You're in Microsoft deep secrets page</h1>
-    <p>The passphrase is: E2E testing can be hard but not with the right tool.</p>
+    <p>
+      The passphrase is: E2E testing can be hard but not with the right tool.
+    </p>
     <p>The key code is: 1 5 2+5 3 1+11</p>
   </section>
   <section v-else>
     <h1>Agency backdoor</h1>
-    <form method="POST" action="https://accounts.google.com/ServiceLogin/webreauth">
+    <form
+      method="POST"
+      action="https://accounts.google.com/ServiceLogin/webreauth"
+    >
       <label>
         Login
         <div class="input-container">
@@ -29,7 +34,9 @@ const {data} = await useFetch(() => `/api/auth?token=${route.query.token}`);
         </div>
       </label>
       <div class="actions-container">
-      <PrimaryButton class="button" type="submit" to="/getting-started">Connect</PrimaryButton>
+        <PrimaryButton class="button" type="submit" to="/getting-started"
+          >Connect</PrimaryButton
+        >
       </div>
     </form>
   </section>

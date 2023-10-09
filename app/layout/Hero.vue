@@ -6,7 +6,7 @@ import { NuxtLink } from "#components";
 
 <template>
   <section class="hero">
-    <h2 class="title">
+    <h1 class="title">
       <HeroTitlePart
         text="Protect."
         start-color="var(--blue-1)"
@@ -22,7 +22,7 @@ import { NuxtLink } from "#components";
         start-color="var(--red-1)"
         end-color="var(--yellow-1)"
       />
-    </h2>
+    </h1>
     <p class="subtitle">
       Microsoft's Advanced Defense Division (MADD) pushes the boundaries of
       technology to ensure a secure future.
