@@ -9,11 +9,8 @@ const { data } = await useFetch(() => `/api/auth?token=${route.query.token}`);
 
 <template>
   <section v-if="data?.hasValidToken">
-    <h1>You're in Microsoft deep secrets page</h1>
-    <p>
-      The passphrase is: E2E testing can be hard but not with the right tool.
-    </p>
-    <p>The key code is: 1 5 2+5 3 1+11</p>
+    <h1>Your agent page is now unlocked</h1>
+    <p>Your key code is: <pre>6+16 13 2+16+49+45 16+19+10+5+21 2+3</pre></p>
   </section>
   <section v-else>
     <h1>Agency backdoor</h1>

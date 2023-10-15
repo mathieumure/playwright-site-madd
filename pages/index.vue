@@ -5,7 +5,7 @@ import ImageSquare from "~/app/images/ImageSquare.vue";
 
 useHead({
   title:
-    "Welcome to the official website of Microsoft's Advanced Defense Division (MADD).",
+    "Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology",
 });
 </script>
 
@@ -66,9 +66,10 @@ useHead({
       <h3>Commitment to Global Security</h3>
       <p>
         MADD collaborates closely with governments, security agencies, and
-        industrial partners worldwide to counter emerging threats. We take pride
-        in contributing to the creation of a future where technology is an
-        unwavering asset in preserving peace and security.
+        industrial partners worldwide to counter emerging threats as soon as
+        possible. We take pride in contributing to the creation of a future
+        where technology is an unwavering asset in preserving peace and security
+        thanks to each agent and our yearly double digit growth.
       </p>
     </article>
     <ImageSquare
