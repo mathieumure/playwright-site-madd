@@ -23,7 +23,7 @@ const mario: Agent = {
     "Infiltration of Bowser's castle and successful rescue of Princess Peach on multiple occasions",
     "Exploration of fantastic worlds to collect valuable items and defeat enemies",
   ],
-  status: "Active CIA agent, highly skilled and dedicated to his mission",
+  status: "Active MADD agent, highly skilled and dedicated to his mission",
   note: [
     "Mario has shown exceptional courage and unwavering determination in all his missions.",
     "His acrobatic skills and perseverance make him a valuable asset to the Agency.",
@@ -52,7 +52,7 @@ const wario: Agent = {
     "Successful infiltration of numerous dungeons and lairs in search of hidden treasures",
     "Confrontation with Mario on multiple occasions for various stakes",
   ],
-  status: "Unaffiliated CIA agent, operating independently",
+  status: "Unaffiliated MADD agent, operating independently",
   note: [
     "Wario is known for his selfish temperament and a strong desire for personal wealth.",
     "Despite his appearance, he possesses surprising technical skills and can be a force to be reckoned with.",
@@ -83,7 +83,7 @@ const link: Agent = {
     "Collaboration with allies such as Princess Zelda and other warriors",
   ],
   status:
-    "Heroic CIA agent, intervening in crisis situations to protect the kingdom",
+    "Heroic MADD agent, intervening in crisis situations to protect the kingdom",
   note: [
     "Link has shown unwavering dedication to protect Hyrule and its inhabitants.",
     "His varied skills and courage in the face of adversity make him a crucial asset in the fight against evil.",
@@ -114,7 +114,7 @@ const pikachu = {
     "Participation in Pokémon competitions to showcase its unique abilities",
   ],
   status:
-    "Special CIA agent, operating in the world of Pokémon to maintain peace, security and more. Stop evolving since his first mission.",
+    "Special MADD agent, operating in the world of Pokémon to maintain peace, security and more. Stop evolving since his first mission.",
   note: [
     "Pikachu has shown unwavering loyalty to its trainer and friends, ready to face all challenges.",
     "Its electrical skills and ability to form bonds with other Pokémon make it a valuable asset in the world of secret agents.",
@@ -144,11 +144,40 @@ const donkeyKong = {
     "Confrontation with numerous formidable opponents to defend the jungle",
   ],
   status:
-    "Field agent of the CIA, specialized in the defense of the natural environment",
+    "Field agent of the MADD, specialized in the defense of the natural environment",
   note: [
     "Donkey Kong is a dedicated protector of his jungle and friends, including Diddy Kong and Dixie Kong.",
-    "His raw strength and unwavering courage make him a valuable asset for the CIA in preserving nature.",
+    "His raw strength and unwavering courage make him a valuable asset for the MADD in preserving nature.",
   ],
 };
 
-export const database: Array<Agent> = [mario, wario, link, pikachu, donkeyKong];
+const x: Agent = {
+  id: -1,
+  birthdate: "Unknown",
+  name: "Unknown",
+  codeName: "Agent X",
+  placeOfBirth: "Unknown",
+  appearance: {
+    Height: "175 cm",
+    Weight: "Unknown",
+    Eyes: "Blue",
+    Hair: "Black",
+  },
+  abilities: [
+    "Master of playwright",
+    "Lier",
+  ],
+  mission:
+      "Convert to Playwright all Cypress user by infiltrating Cypress agency",
+  missionsHistory: [
+    "Frontops infiltration",
+    "Convert to Vite, Webpack users",
+  ],
+  status: "Active MADD agent, highly skilled and dedicated to his mission",
+  note: [
+    "Agent X is our first agent and the creator of this agency",
+    "His infiltrating skills and perseverance make him a valuable asset to the Agency.",
+  ],
+};
+
+export const database: Array<Agent> = [mario, wario, link, pikachu, donkeyKong, x];

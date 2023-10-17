@@ -13,7 +13,7 @@ const apiHandler = defineEventHandler<Array<Agent>>((event) => {
   if (!query.q) {
     return [];
   }
-  return searchEngine.search(query.q as string).map((it) => it.item);
+  return searchEngine.search(query.q as string).map((it) => it.item).slice(0,5);
 });
 
 export default apiHandler;
