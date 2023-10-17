@@ -4,7 +4,7 @@ import ImageSquare from "~/app/images/ImageSquare.vue";
 
 const { data } = await useFetch<Agent>(() => `/api/agents/-1`);
 const discovered = ref(false);
-const imageSrc = computed(() => `/images/agents/${discovered.value ? 'x' : '-1'}.webp`);
+const imageSrc = computed(() => `/images/agents/${discovered.value ? 'x' : 'minus1'}.webp`);
 const toggleHidden = () => {
   discovered.value = !discovered.value;
 }
