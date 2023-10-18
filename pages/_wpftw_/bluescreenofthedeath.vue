@@ -1,7 +1,5 @@
 <script lang="ts" setup="">
-import { NuxtLink } from "#components";
 import PrimaryButton from "~/app/layout/PrimaryButton.vue";
-import SearchIcon from "~/app/icons/SearchIcon.vue";
 
 const route = useRoute();
 const { data } = await useFetch(() => `/api/auth?token=${route.query.token}`);
@@ -10,7 +8,7 @@ const { data } = await useFetch(() => `/api/auth?token=${route.query.token}`);
 <template>
   <section v-if="data?.hasValidToken">
     <h1>Your agent page is now unlocked</h1>
-    <p>Your key code is: <pre>6+16 13 2+16+49+45 16+19+10+5+21 2+3</pre></p>
+    <p>Your key code is: <code>6+16 13 2+16+49+45 16+19+10+5+21 2+3</code></p>
   </section>
   <section v-else>
     <h1>Agency backdoor</h1>
