@@ -114,7 +114,7 @@ const pikachu = {
     "Participation in Pokémon competitions to showcase its unique abilities",
   ],
   status:
-    "Special MADD agent, operating in the world of Pokémon to maintain peace, security and more. Stop evolving since his first mission.",
+    "Special MADD agent, operating on Pokemon world to gather information to maintain peace and security. Stop evolving any more since his first mission.",
   note: [
     "Pikachu has shown unwavering loyalty to its trainer and friends, ready to face all challenges.",
     "Its electrical skills and ability to form bonds with other Pokémon make it a valuable asset in the world of secret agents.",
